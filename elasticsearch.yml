@@ -1,0 +1,6 @@
+cluster.name: "elasticsearch"
+node.name: es1
+network.host: 0.0.0.0
+http.port: 9200
+cluster.initial_master_nodes: es1
+bootstrap.memory_lock: true

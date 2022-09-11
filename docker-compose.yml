@@ -1,0 +1,60 @@
+version: '3.3'
+services:
+    elasticsearch:
+        container_name: elasticsearch
+        build:
+            context: .
+            dockerfile: elasticsearch.Dockerfile
+        ports:
+            - 9200:9200
+            - 9300:9300
+        environment:
+            - bootstrap.memory_lock=true # along with the memlock settings below, disables swapping
+            - "ES_JAVA_OPTS=-Xms512m -Xmx512m" # minimum and maximum Java heap size, recommend setting both to 50% of system RAM
+        ulimits:
+            memlock:
+                soft: -1
+                hard: -1
+            nofile:
+                soft: 65536 # maximum number of open files for the Elasticsearch user, set to at least 65536 on modern systems
+                hard: 65536
+        volumes:
+            - es_vol01:/usr/share/elasticsearch/data
+        networks:
+            - net01
+    filebeat:
+        container_name: filebeat
+        build:
+            context: .
+            dockerfile: filebeat.Dockerfile
+        depends_on:
+            - elasticsearch
+        networks:
+            - net01
+        ports:
+            - 8080:8080
+        volumes:
+            - type: bind
+              source: ${HAPROXY_SOURCE_DIR:-/tmp/haproxy/}
+              target: /var/log/haproxy/
+    kibana:
+        container_name: kibana
+        build:
+            context: .
+            dockerfile: kibana.Dockerfile
+        ports:
+            - 5601:5601
+        volumes:
+            - kibana_vol01:/usr/share/kibana/data
+        networks:
+            - net01
+
+volumes:
+  es_vol01:
+    driver: local
+  kibana_vol01:
+    driver: local
+
+networks:
+  net01:
+    driver: bridge
