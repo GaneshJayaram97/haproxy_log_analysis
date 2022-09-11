@@ -10,6 +10,15 @@ filebeat.config:
 
 processors:
 - add_cloud_metadata: ~
+- script:
+      lang: javascript
+      tag: my_filter
+      source: >
+        function process(event) {
+            var pathname = event.Get("log.file.path");
+            var splitString = pathname.split('\\').pop().split('/');
+            event.Put("haproxy.hostname", splitString[splitString.length-2])
+        }
 
 output.elasticsearch:
   hosts: '${ELASTICSEARCH_HOSTS:elasticsearch:9200}'

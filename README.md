@@ -30,6 +30,8 @@ https://docs.docker.com/get-docker/
   ### Source Directory
    HAProxy logs should be stored under a directory in the host machine (where the docker is running) and this directory should be configured as an environment variable HAPROXY_SOURCE_DIR (set the env variable in .bashrc/.bash_profile and source it). If no directory is created, default directory service would lookup for directory under /tmp/haproxy and will fail to start if the directory is not available in the specified location
 
+   Create a directory under $HAPROXY_SOURCE_DIR which should be same as that of system's hostname and copy and place all HAProxy logs under it and filebeat parses the logs present in this structure and ingest the hostname present in the sub-directory into elasticsearch
+
    Eg: 
 
 In MAC, 
@@ -41,9 +43,16 @@ In MAC,
    source ~/.bash_profile
  ```   
 
+## Sample HAProxy Log 
+
+```
+2022-09-07 20:57:26,444129 mysystemhostname haproxy[32712]:  192.168.1.5:56134 [07/Sep/2022:20:57:26.411] frontend_service~ my_service/server_1 0/0/0/32/32 200 877 - - ---- 11/11/0/0/0 0/0 "GET https://server_1/app HTTP/2.0"
+```
+
    Note :
 
    1. Log files should not be in zipped/compressed/tar format and should be raw haproxy log files
+
 
 
  ### Resource 
