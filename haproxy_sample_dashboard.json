@@ -1,0 +1,138 @@
+{
+    "version": "7.17.6",
+    "objects": [
+      {
+        "id": "0224d1d0-31c1-11ed-bd95-eb9d3d6b99d9",
+        "type": "dashboard",
+        "namespaces": [
+          "default"
+        ],
+        "updated_at": "2022-09-12T16:51:46.267Z",
+        "version": "WzUzMTMsOV0=",
+        "attributes": {
+          "title": "HAProxy Sample API Analysis Dashboard",
+          "hits": 0,
+          "description": "",
+          "panelsJSON": "[{\"version\":\"7.17.6\",\"type\":\"visualization\",\"gridData\":{\"x\":0,\"y\":0,\"w\":48,\"h\":8,\"i\":\"a8c31c6a-a7f8-414d-b81e-6114aad963e4\"},\"panelIndex\":\"a8c31c6a-a7f8-414d-b81e-6114aad963e4\",\"embeddableConfig\":{\"savedVis\":{\"id\":\"\",\"title\":\"\",\"description\":\"\",\"type\":\"metrics\",\"params\":{\"time_range_mode\":\"entire_time_range\",\"axis_formatter\":\"number\",\"axis_position\":\"left\",\"axis_scale\":\"normal\",\"bar_color_rules\":[{\"id\":\"4a237ba0-311f-11ed-8277-c593f951c3fe\"}],\"drop_last_bucket\":0,\"id\":\"75289bb6-b78a-46f1-ab30-44656b53037f\",\"interval\":\"30m\",\"isModelInvalid\":false,\"max_lines_legend\":1,\"series\":[{\"time_range_mode\":\"entire_time_range\",\"axis_position\":\"right\",\"chart_type\":\"line\",\"color\":\"#68BC00\",\"fill\":0.5,\"formatter\":\"default\",\"id\":\"58548771-796c-42fe-bf58-65035ecd26fd\",\"label\":\"Top API Requests\",\"line_width\":1,\"metrics\":[{\"size\":\"1\",\"order\":\"desc\",\"agg_with\":\"max\",\"field\":\"haproxy.http.request.time_wait_without_data_ms\",\"id\":\"b38cb071-a3d6-45f5-8d3e-2e27652387c2\",\"order_by\":\"@timestamp\",\"type\":\"max\"}],\"override_index_pattern\":0,\"palette\":{\"name\":\"default\",\"type\":\"palette\"},\"point_size\":1,\"separate_axis\":0,\"series_drop_last_bucket\":0,\"split_mode\":\"terms\",\"stacked\":\"none\",\"terms_field\":\"haproxy.http.request.raw_request_line.keyword\",\"terms_order_by\":\"b38cb071-a3d6-45f5-8d3e-2e27652387c2\",\"terms_size\":\"1000\",\"terms_direction\":\"desc\"}],\"show_grid\":1,\"show_legend\":1,\"time_field\":\"@timestamp\",\"tooltip_mode\":\"show_all\",\"truncate_legend\":1,\"type\":\"top_n\",\"use_kibana_indexes\":true,\"index_pattern_ref_name\":\"metrics_a8c31c6a-a7f8-414d-b81e-6114aad963e4_0_index_pattern\"},\"uiState\":{},\"data\":{\"aggs\":[],\"searchSource\":{\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[]}}},\"hidePanelTitles\":false,\"enhancements\":{}},\"title\":\"Top 100 Time Consuming API(s)\"},{\"version\":\"7.17.6\",\"type\":\"visualization\",\"gridData\":{\"x\":0,\"y\":8,\"w\":48,\"h\":8,\"i\":\"98eecbc5-9fd6-4055-9677-629f387fb67a\"},\"panelIndex\":\"98eecbc5-9fd6-4055-9677-629f387fb67a\",\"embeddableConfig\":{\"savedVis\":{\"id\":\"\",\"title\":\"\",\"description\":\"\",\"type\":\"metrics\",\"params\":{\"time_range_mode\":\"entire_time_range\",\"id\":\"f73ea18e-0cef-424a-8bb3-0bf42778caf3\",\"type\":\"table\",\"series\":[{\"time_range_mode\":\"entire_time_range\",\"id\":\"2b62606c-411f-45b2-8414-43a5b10e599c\",\"color\":\"#68BC00\",\"split_mode\":\"everything\",\"palette\":{\"type\":\"palette\",\"name\":\"default\"},\"metrics\":[{\"id\":\"cb2d0a74-7ba1-4bd2-920d-88739fba0b91\",\"type\":\"count\"}],\"separate_axis\":0,\"axis_position\":\"right\",\"formatter\":\"default\",\"chart_type\":\"line\",\"line_width\":1,\"point_size\":1,\"fill\":0.5,\"stacked\":\"none\",\"override_index_pattern\":0,\"series_drop_last_bucket\":0,\"label\":\"Requests by Count\"}],\"time_field\":\"\",\"index_pattern\":\"\",\"use_kibana_indexes\":true,\"interval\":\"\",\"axis_position\":\"left\",\"axis_formatter\":\"number\",\"axis_scale\":\"normal\",\"show_legend\":1,\"truncate_legend\":1,\"max_lines_legend\":1,\"show_grid\":1,\"tooltip_mode\":\"show_all\",\"drop_last_bucket\":0,\"bar_color_rules\":[{\"id\":\"1c22fe40-3130-11ed-9338-f7d8a16d1533\"}],\"pivot_id\":\"haproxy.http.request.raw_request_line.keyword\",\"pivot_type\":\"string\",\"pivot_rows\":\"200\",\"isModelInvalid\":false,\"pivot_label\":\"HTTP Request\"},\"uiState\":{},\"data\":{\"aggs\":[],\"searchSource\":{\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[]}}},\"table\":{\"sort\":{\"column\":\"2b62606c-411f-45b2-8414-43a5b10e599c\",\"order\":\"desc\"}},\"hidePanelTitles\":false,\"enhancements\":{}},\"title\":\"Requests By Count\"},{\"version\":\"7.17.6\",\"type\":\"visualization\",\"gridData\":{\"x\":0,\"y\":26,\"w\":48,\"h\":11,\"i\":\"2e60b4e2-cb80-4d75-9ec8-c065ad48b3fd\"},\"panelIndex\":\"2e60b4e2-cb80-4d75-9ec8-c065ad48b3fd\",\"embeddableConfig\":{\"savedVis\":{\"id\":\"\",\"title\":\"\",\"description\":\"\",\"type\":\"metrics\",\"params\":{\"time_range_mode\":\"entire_time_range\",\"id\":\"3c41c2e3-a419-47ab-9fc9-5d2b2b9f0239\",\"type\":\"timeseries\",\"series\":[{\"time_range_mode\":\"entire_time_range\",\"id\":\"499e13db-5992-4b6b-909a-74b7f2366fc7\",\"color\":\"#68BC00\",\"split_mode\":\"filter\",\"palette\":{\"type\":\"palette\",\"name\":\"default\"},\"metrics\":[{\"id\":\"8027dc7d-f14f-4d7b-9fc3-ce0c5c6f8280\",\"type\":\"count\"}],\"separate_axis\":0,\"axis_position\":\"right\",\"formatter\":\"default\",\"chart_type\":\"line\",\"line_width\":1,\"point_size\":1,\"fill\":0.5,\"stacked\":\"none\",\"override_index_pattern\":0,\"series_drop_last_bucket\":0,\"label\":\"Requests Rate\",\"filter\":{\"query\":\"haproxy.frontend_name : \\\"fmha~\\\"  \",\"language\":\"kuery\"}}],\"time_field\":\"@timestamp\",\"use_kibana_indexes\":true,\"interval\":\"30m\",\"axis_position\":\"left\",\"axis_formatter\":\"number\",\"axis_scale\":\"normal\",\"show_legend\":1,\"truncate_legend\":1,\"max_lines_legend\":1,\"show_grid\":1,\"tooltip_mode\":\"show_all\",\"drop_last_bucket\":0,\"isModelInvalid\":false,\"bar_color_rules\":[{\"id\":\"96b27400-3122-11ed-8277-c593f951c3fe\"}],\"pivot_id\":\"@timestamp\",\"pivot_type\":\"date\",\"index_pattern_ref_name\":\"metrics_2e60b4e2-cb80-4d75-9ec8-c065ad48b3fd_0_index_pattern\"},\"uiState\":{},\"data\":{\"aggs\":[],\"searchSource\":{\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[]}}},\"enhancements\":{},\"hidePanelTitles\":false},\"title\":\"HTTP Requests Trend\"},{\"version\":\"7.17.6\",\"type\":\"visualization\",\"gridData\":{\"x\":0,\"y\":37,\"w\":48,\"h\":13,\"i\":\"dc1afd20-b368-455c-b5ac-960f327cfcf5\"},\"panelIndex\":\"dc1afd20-b368-455c-b5ac-960f327cfcf5\",\"embeddableConfig\":{\"savedVis\":{\"id\":\"\",\"title\":\"\",\"description\":\"\",\"type\":\"metrics\",\"params\":{\"time_range_mode\":\"entire_time_range\",\"id\":\"b4a128aa-50bc-4c43-a2a0-841861ecff0a\",\"type\":\"table\",\"series\":[{\"time_range_mode\":\"entire_time_range\",\"id\":\"4da807c4-ecc5-4cdb-bba1-0c96511efdb1\",\"color\":\"#68BC00\",\"split_mode\":\"everything\",\"palette\":{\"type\":\"palette\",\"name\":\"default\"},\"metrics\":[{\"id\":\"2f55b806-b157-4744-a003-a8f15fad4c05\",\"type\":\"count\"}],\"separate_axis\":0,\"axis_position\":\"right\",\"formatter\":\"default\",\"chart_type\":\"line\",\"line_width\":1,\"point_size\":1,\"fill\":0.5,\"stacked\":\"none\",\"override_index_pattern\":0,\"series_drop_last_bucket\":0}],\"time_field\":\"\",\"index_pattern\":\"\",\"use_kibana_indexes\":true,\"interval\":\"\",\"axis_position\":\"left\",\"axis_formatter\":\"number\",\"axis_scale\":\"normal\",\"show_legend\":1,\"truncate_legend\":1,\"max_lines_legend\":1,\"show_grid\":1,\"tooltip_mode\":\"show_all\",\"drop_last_bucket\":0,\"bar_color_rules\":[{\"id\":\"de700e30-3125-11ed-8277-c593f951c3fe\"}],\"pivot_id\":\"source.address.keyword\",\"pivot_type\":\"string\",\"pivot_label\":\"Source Address\",\"pivot_rows\":\"250\"},\"uiState\":{},\"data\":{\"aggs\":[],\"searchSource\":{\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[{\"$state\":{\"store\":\"appState\"},\"meta\":{\"alias\":null,\"disabled\":false,\"index\":\"b950f7d0-311c-11ed-9962-4beef156be9f\",\"key\":\"source.address\",\"negate\":true,\"params\":[\"10.135.50.88\",\"10.135.49.186\",\"10.135.49.187\"],\"type\":\"phrases\"},\"query\":{\"bool\":{\"minimum_should_match\":1,\"should\":[{\"match_phrase\":{\"source.address\":\"10.135.50.88\"}},{\"match_phrase\":{\"source.address\":\"10.135.49.186\"}},{\"match_phrase\":{\"source.address\":\"10.135.49.187\"}}]}}}]}}},\"hidePanelTitles\":false,\"enhancements\":{}},\"title\":\"Top Requests by Servers\"},{\"version\":\"7.17.6\",\"type\":\"visualization\",\"gridData\":{\"x\":0,\"y\":16,\"w\":48,\"h\":10,\"i\":\"badac1a1-7eae-4de2-9a81-739ee2a1082b\"},\"panelIndex\":\"badac1a1-7eae-4de2-9a81-739ee2a1082b\",\"embeddableConfig\":{\"savedVis\":{\"id\":\"\",\"title\":\"\",\"description\":\"\",\"type\":\"metrics\",\"params\":{\"time_range_mode\":\"entire_time_range\",\"id\":\"96a0bc08-8364-4150-a8ce-a2651bc3512e\",\"type\":\"table\",\"series\":[{\"time_range_mode\":\"entire_time_range\",\"id\":\"9f0f74a8-2370-4c64-889c-45c2b83e1c7e\",\"color\":\"#68BC00\",\"split_mode\":\"everything\",\"palette\":{\"type\":\"palette\",\"name\":\"default\"},\"metrics\":[{\"id\":\"9ba3f7bc-6909-42bb-9a9b-863671fbbace\",\"type\":\"count\"}],\"separate_axis\":0,\"axis_position\":\"right\",\"formatter\":\"default\",\"chart_type\":\"line\",\"line_width\":1,\"point_size\":1,\"fill\":0.5,\"stacked\":\"none\",\"override_index_pattern\":0,\"series_drop_last_bucket\":0,\"label\":\"URL Requests By Count\"}],\"time_field\":\"\",\"index_pattern\":\"\",\"use_kibana_indexes\":true,\"interval\":\"\",\"axis_position\":\"left\",\"axis_formatter\":\"number\",\"axis_scale\":\"normal\",\"show_legend\":1,\"truncate_legend\":1,\"max_lines_legend\":1,\"show_grid\":1,\"tooltip_mode\":\"show_all\",\"drop_last_bucket\":0,\"bar_color_rules\":[{\"id\":\"da818d90-3133-11ed-bce3-f7acf90f4073\"}],\"pivot_id\":\"url.path.keyword\",\"pivot_type\":\"string\",\"pivot_label\":\"URL Path\",\"pivot_rows\":\"200\"},\"uiState\":{},\"data\":{\"aggs\":[],\"searchSource\":{\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[]}}},\"hidePanelTitles\":false,\"table\":{\"sort\":{\"column\":\"9f0f74a8-2370-4c64-889c-45c2b83e1c7e\",\"order\":\"desc\"}},\"enhancements\":{}},\"title\":\"URL Requests By Count\"}]",
+          "optionsJSON": "{\"useMargins\":true,\"syncColors\":false,\"hidePanelTitles\":false}",
+          "version": 1,
+          "timeRestore": true,
+          "timeTo": "now",
+          "timeFrom": "now-1M",
+          "refreshInterval": {
+            "pause": true,
+            "value": 0
+          },
+          "kibanaSavedObjectMeta": {
+            "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[]}"
+          }
+        },
+        "references": [
+          {
+            "name": "a8c31c6a-a7f8-414d-b81e-6114aad963e4:metrics_a8c31c6a-a7f8-414d-b81e-6114aad963e4_0_index_pattern",
+            "type": "index-pattern",
+            "id": "b950f7d0-311c-11ed-9962-4beef156be9f"
+          },
+          {
+            "name": "2e60b4e2-cb80-4d75-9ec8-c065ad48b3fd:metrics_2e60b4e2-cb80-4d75-9ec8-c065ad48b3fd_0_index_pattern",
+            "type": "index-pattern",
+            "id": "b950f7d0-311c-11ed-9962-4beef156be9f"
+          },
+          {
+            "name": "dc1afd20-b368-455c-b5ac-960f327cfcf5:kibanaSavedObjectMeta.searchSourceJSON.filter[0].meta.index",
+            "type": "index-pattern",
+            "id": "b950f7d0-311c-11ed-9962-4beef156be9f"
+          },
+          {
+            "id": "bcf15dd0-3121-11ed-9962-4beef156be9f",
+            "type": "tag",
+            "name": "tag-bcf15dd0-3121-11ed-9962-4beef156be9f"
+          },
+          {
+            "id": "c0a36950-3121-11ed-9962-4beef156be9f",
+            "type": "tag",
+            "name": "tag-c0a36950-3121-11ed-9962-4beef156be9f"
+          },
+          {
+            "id": "18e42f10-31c1-11ed-bd95-eb9d3d6b99d9",
+            "type": "tag",
+            "name": "tag-18e42f10-31c1-11ed-bd95-eb9d3d6b99d9"
+          }
+        ],
+        "migrationVersion": {
+          "dashboard": "7.17.3"
+        },
+        "coreMigrationVersion": "7.17.6"
+      },
+      {
+        "id": "b950f7d0-311c-11ed-9962-4beef156be9f",
+        "type": "index-pattern",
+        "namespaces": [
+          "default"
+        ],
+        "updated_at": "2022-09-10T15:24:55.629Z",
+        "version": "WzUwNzgsOV0=",
+        "attributes": {
+          "fieldAttrs": "{}",
+          "title": "filebeat-7.17.6*",
+          "timeFieldName": "@timestamp",
+          "fields": "[]",
+          "typeMeta": "{}",
+          "runtimeFieldMap": "{}"
+        },
+        "references": [],
+        "migrationVersion": {
+          "index-pattern": "7.11.0"
+        },
+        "coreMigrationVersion": "7.17.6"
+      },
+      {
+        "id": "bcf15dd0-3121-11ed-9962-4beef156be9f",
+        "type": "tag",
+        "namespaces": [
+          "default"
+        ],
+        "updated_at": "2022-09-10T16:00:49.197Z",
+        "version": "WzUxMDIsOV0=",
+        "attributes": {
+          "name": "haproxy",
+          "description": "",
+          "color": "#7a169d"
+        },
+        "references": [],
+        "coreMigrationVersion": "7.17.6"
+      },
+      {
+        "id": "c0a36950-3121-11ed-9962-4beef156be9f",
+        "type": "tag",
+        "namespaces": [
+          "default"
+        ],
+        "updated_at": "2022-09-10T16:00:55.397Z",
+        "version": "WzUxMDQsOV0=",
+        "attributes": {
+          "name": "API",
+          "description": "",
+          "color": "#8b5be5"
+        },
+        "references": [],
+        "coreMigrationVersion": "7.17.6"
+      },
+      {
+        "id": "18e42f10-31c1-11ed-bd95-eb9d3d6b99d9",
+        "type": "tag",
+        "namespaces": [
+          "default"
+        ],
+        "updated_at": "2022-09-11T11:01:33.442Z",
+        "version": "WzUxODQsOV0=",
+        "attributes": {
+          "name": "Analysis",
+          "description": "",
+          "color": "#572469"
+        },
+        "references": [],
+        "coreMigrationVersion": "7.17.6"
+      }
+    ]
+  }

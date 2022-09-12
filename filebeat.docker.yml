@@ -3,11 +3,6 @@ filebeat.config:
     path: ${path.config}/modules.d/*.yml
     reload.enabled: false
 
-# filebeat.autodiscover:
-#   providers:
-#     - type: docker
-#       hints.enabled: true
-
 processors:
 - add_cloud_metadata: ~
 - script:
@@ -19,6 +14,10 @@ processors:
             var splitString = pathname.split('\\').pop().split('/');
             event.Put("haproxy.hostname", splitString[splitString.length-2])
         }
+
+setup.template.settings:
+  setup.template.enabled: true
+  setup.template.overwrite: true
 
 output.elasticsearch:
   hosts: '${ELASTICSEARCH_HOSTS:elasticsearch:9200}'
