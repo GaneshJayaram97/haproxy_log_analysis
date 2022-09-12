@@ -12,7 +12,7 @@ This repository is created to parse/ingest/analyze the HAProxy logs using filebe
 
 ## Elasticsearch 
 
-   Ingest the parsed the logs and used by kibana for visualising / analysing the logs and metrics
+   Ingest the parsed logs and used by kibana for visualising / analysing the logs and metrics
 
 
 ## Kibana 
@@ -35,13 +35,21 @@ https://docs.docker.com/get-docker/
    Eg: 
 
 In MAC, 
- ```
-   mkdir -p /var/log/haproxy
+   ```
+   sudo mkdir -p /var/log/haproxy
+   ```
+   ```
    vi ~/.bash_profile
+   ```
+   ```
    export HAPROXY_SOURCE_DIR=/var/log/haproxy
+   ```
+   ```
    :wq (To save and quit the file)
+   ```
+   ```
    source ~/.bash_profile
- ```   
+   ```
 
 ## Sample HAProxy Log 
 
@@ -52,6 +60,8 @@ In MAC,
    Note :
 
    1. Log files should not be in zipped/compressed/tar format and should be raw haproxy log files
+   2. If using the sample log, create a directory under $HAPROXY_SOURCE_DIR which should be same name as system hostname from where haproxy logs been collected and create a file named haproxy.log and place the above sample log under this created directory 
+   3. create all directories/files with sudo to avoid permission problems
 
 
 
@@ -83,7 +93,7 @@ docker image ls
 ```
 docker-compose up
 ``` 
-    The above command would start all the defined services in docker-compose.yml file 
+ The above command would start all the defined services in docker-compose.yml file 
 
 5. To run a particular service 
 ```
@@ -91,9 +101,9 @@ docker-compose up -d <service-name>
 ```
 Note :
 
-   Service Name could be found from docker-compose.yml file 
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a. Service Name could be found from docker-compose.yml file 
 
-   -d option would start the container in background. Skip this option in order to start it in foreground
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; b. -d option would start the container in background. Skip this option in order to start it in foreground
 
 
 6. View the running containers 
@@ -124,7 +134,7 @@ A Sample Dashboard has been created and can be visualised by following the below
 2. SSH into Kibana Container using its id which is present in the output of the above command
 
    ```
-     docker exec -it <container-id> /bin/bash
+     docker exec -it <kibana-container-id> /bin/bash
    ```
 
 3. Import the default dashboard present in instance 
